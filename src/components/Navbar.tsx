@@ -26,7 +26,7 @@ export function Navbar() {
       // Section spy
       const sections = NAV_LINKS.map(link => link.href.substring(1));
       let current = "";
-      
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -37,7 +37,7 @@ export function Navbar() {
           }
         }
       }
-      
+
       if (current) setActiveSection(current);
     };
 
@@ -66,15 +66,15 @@ export function Navbar() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="fixed top-0 left-0 right-0 z-40 flex justify-center pt-6 px-4 md:px-8 pointer-events-none"
       >
-        <div 
+        <div
           className={cn(
             "flex items-center justify-between w-full max-w-6xl rounded-full px-6 py-3 transition-all duration-500 pointer-events-auto",
             isScrolled ? "glass-nav py-3" : "bg-transparent py-4"
           )}
         >
           {/* Logo */}
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             onClick={(e) => scrollTo(e, "#home")}
             className="font-display font-bold text-xl tracking-tight flex items-center gap-2 group"
           >
@@ -112,13 +112,13 @@ export function Navbar() {
           {/* Resume & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <a
-              href="/ashvinkota.pdf"
+              href="/Ashvin_Kota_Resume.pdf"
               download="Ashvin_Kota_Resume.pdf"
               className="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]"
             >
               Download Resume
             </a>
-            
+
             <button
               className="md:hidden p-2 text-foreground focus:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
